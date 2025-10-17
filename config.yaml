@@ -1,0 +1,46 @@
+server:
+  listen_host: "0.0.0.0"
+  udp_port: 5300
+  tcp_port: 5300
+  verbose: true
+
+zone:
+  origin: "example.com."
+  default_ttl: 300
+  soa:
+    mname: "ns1.example.com."
+    rname: "hostmaster.example.com."
+    serial: "auto"
+    refresh: 3600
+    retry: 600
+    expire: 604800
+    minimum: 300
+
+  ns:
+    - "ns1.example.com."
+
+records:
+  - name: "example.com."
+    type: "A"
+    value: "93.184.216.34"
+    ttl: 300
+
+  - name: "www.example.com."
+    type: "CNAME"
+    value: "example.com."
+    ttl: 300
+
+  - name: "ipv6.example.com."
+    type: "AAAA"
+    value: "2001:db8::1"
+    ttl: 300
+
+  - name: "example.com."
+    type: "TXT"
+    value: "Custom DNS example"
+    ttl: 300
+
+  - name: "example.com."
+    type: "MX"
+    value: "10 mail.example.com."
+    ttl: 300
