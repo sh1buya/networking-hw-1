@@ -39,10 +39,3 @@ records:
     type: "TXT"
     value: "Custom DNS example"
     ttl: 300
-
-  - name: "example.com."
-    type: "MX"
-    value:
-      prio: 10
-      host: "mail.example.com."
-    ttl: 300
