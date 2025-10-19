@@ -2,7 +2,7 @@ server:
   listen_host: "0.0.0.0"
   udp_port: 5300
   tcp_port: 5300
-  verbose: true
+  verbose: false
 
 zone:
   origin: "example.com."
@@ -42,5 +42,7 @@ records:
 
   - name: "example.com."
     type: "MX"
-    value: "10 mail.example.com."
+    value:
+      prio: 10
+      host: "mail.example.com."
     ttl: 300

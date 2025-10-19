@@ -9,7 +9,7 @@
 ---
 
 ## Возможности
-- Поддержка типов: **A**, AAAA, CNAME, MX, TXT, NS, SOA
+- Поддержка типов: **A**, AAAA, CNAME, TXT, NS, SOA
 - Конфиг yaml
 - Работает по UDP и TCP
 - Авторитативные ответы (AA)
@@ -49,15 +49,13 @@ DNS сервер запущен на 0.0.0.0:5353 (UDP/TCP)
 ### 4. Проверка через `dig`
 ```bash
 dig @127.0.0.1 -p 5300 example.com A
-```
-```bash
 dig @127.0.0.1 -p 5300 ipv6.example.com AAAA
+dig @127.0.0.1 -p 5300 www.example.com CNAME
+dig @127.0.0.1 -p 5300 example.com TXT
+dig @127.0.0.1 -p 5300 example.com NS
+dig @127.0.0.1 -p 5300 example.com SOA
 ```
-```bash
-dig  @127.0.0.1 -p 5300 www.example.com CNAME
-
-```
-И так далее, проверьте соответствие ответов в секции ANSWER со значениями в config.yaml
+Проверьте соответствие ответов в секции ANSWER со значениями в config.yaml
 
 
 ---
